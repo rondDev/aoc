@@ -8,13 +8,9 @@ import (
 )
 
 func Two() {
-	fmt.Printf("Day 2 Part 1: %d\n", twoA())
-	fmt.Printf("Day 2 Part 2: %d\n", twoB())
-}
-
-func twoA() int {
 	lines := utils.LoadLines("2.txt")
-	total := 0
+	total1 := 0
+	total2 := 0
 
 	for _, l := range lines {
 		split := splitGameLine(l)
@@ -22,25 +18,14 @@ func twoA() int {
 		games := strings.Split(split[1], ";")
 		r, g, b := handleGames(games)
 
+		total2 += (r * b * g)
+
 		if r <= 12 && g <= 13 && b <= 14 {
-			total += id
+			total1 += id
 		}
 	}
-	return total
-}
-
-func twoB() int {
-	lines := utils.LoadLines("2.txt")
-	total := 0
-
-	for _, l := range lines {
-		split := splitGameLine(l)
-		games := strings.Split(split[1], ";")
-		r, g, b := handleGames(games)
-
-		total += (r * b * g)
-	}
-	return total
+	fmt.Printf("Day 2 Part 1: %d\n", total1)
+	fmt.Printf("Day 2 Part 2: %d\n", total2)
 }
 
 func handleGames(games []string) (int, int, int) {
