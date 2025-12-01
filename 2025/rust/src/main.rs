@@ -17,7 +17,7 @@ fn main() {
 
 fn handle_file(day: &str) -> Vec<String> {
   // NOTE: I should probably not make this a static path
-  read_to_string(format!("/home/rond/code/aoc/src/input/day00{}.txt", day))
+  read_to_string(format!("/home/rond/code/aoc/src/input/day{}.txt", day))
     .expect(format!("Couldn't load file: day{}.txt", day).as_str())
     .lines()
     .map(String::from)
