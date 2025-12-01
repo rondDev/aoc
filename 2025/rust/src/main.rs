@@ -1,4 +1,3 @@
-#![feature(int_roundings)]
 use std::{env, fs::read_to_string};
 mod days;
 
@@ -17,7 +16,7 @@ fn main() {
 
 fn handle_file(day: &str) -> Vec<String> {
   // NOTE: I should probably not make this a static path
-  read_to_string(format!("/home/rond/code/aoc/src/input/day{}.txt", day))
+  read_to_string(format!("/home/rond/code/aoc/2025/input/day{}.txt", day))
     .expect(format!("Couldn't load file: day{}.txt", day).as_str())
     .lines()
     .map(String::from)
