@@ -1,0 +1,10 @@
+#+TITLE: Advent of Code 2025
+
+* Mission
+Help the elves save christmas by finishing decorations of the North Pole
+by December 12th.
+
+* Notes
+- Should attempt solving problems naively. Better to get correct answer than
+  fast code. If possible, optimize solution or rewrite ~AFTER~ solution has
+  been submitted.
