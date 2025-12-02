@@ -16,6 +16,11 @@ pub fn part_one(input: Vec<String>) {
     "Password for part 1 (math): {} | Time elapsed: {:?}",
     math_one.0, math_one.1
   );
+  let math_two = time_function(math_two, input.clone());
+  println!(
+    "Password for part 2 (math): {} | Time elapsed: {:?}",
+    math_two.0, math_two.1
+  );
   let red = time_function(reduction, input.clone());
   println!(
     "Password for part 1 (reduce): {} | Time elapsed: {:?}",
@@ -57,6 +62,33 @@ fn math_one(input: Vec<String>) -> i128 {
     current_value = (current_value + num) % 100;
     if current_value == 0 {
       total_zero += 1;
+    }
+  }
+  total_zero
+}
+
+fn math_two(input: Vec<String>) -> i128 {
+  let mut total_zero = 0;
+  let mut current_value = 50;
+  for i in 0..input.len() {
+    let direction: &char = &input[i].chars().nth(0).unwrap();
+    let mut num: i128 = input[i][1..].parse().unwrap();
+    let mut div = 0;
+
+    // NOTE: Basically copied: https://github.com/be-nice/AOC2025/blob/main/day_1/part2.go
+
+    total_zero += num / 100;
+    num = num % 100;
+    if direction == &'L' {
+      if current_value != 0 && num >= current_value {
+        total_zero += 1;
+      }
+      current_value = (current_value - num + 100) % 100;
+    } else {
+      if num + current_value >= 100 {
+        total_zero += 1;
+      }
+      current_value = (current_value + num) % 100;
     }
   }
   total_zero
