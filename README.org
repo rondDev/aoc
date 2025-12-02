@@ -8,3 +8,15 @@ by December 12th.
 - Should attempt solving problems naively. Better to get correct answer than
   fast code. If possible, optimize solution or rewrite ~AFTER~ solution has
   been submitted.
+
+  
+* Day 1
+** Part 1 - rust
+#+begin_src 
+  Password for part 1 (naive): 1086 | Time elapsed: 409.603µs
+  Password for part 2 (naive): 6268 | Time elapsed: 668.022µs
+  Password for part 1 (math): 1086 | Time elapsed: 95.009µs
+  Password for part 2 (math): 6268 | Time elapsed: 117.362µs
+  Password for part 1 (reduce): 1086 | Time elapsed: 94.247µs
+#+end_src
+
